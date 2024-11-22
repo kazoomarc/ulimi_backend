@@ -2,16 +2,33 @@ from django.shortcuts import render
 
 # Create your views here.
 from rest_framework import viewsets
-from .models import Crop, Task, Finance, Produce, LivestockType, Livestock
+from .models import (
+    Crop, Task, Finance, Produce,
+    LivestockType, Livestock,
+    Crop, CropInStorage, CropHarvested
+)
+
 from .serializers import (
     CropSerializer, TaskSerializer,
     FinanceSerializer, ProduceSerializer,
-    LivestockTypeSerializer, LivestockSerializer
+    LivestockTypeSerializer, LivestockSerializer,
+    CropSerializer, CropInStorageSerializer, CropHarvestedSerializer
 )
 
+# Crop ViewSet
 class CropViewSet(viewsets.ModelViewSet):
     queryset = Crop.objects.all()
     serializer_class = CropSerializer
+
+# CropInStorage ViewSet
+class CropInStorageViewSet(viewsets.ModelViewSet):
+    queryset = CropInStorage.objects.all()
+    serializer_class = CropInStorageSerializer
+
+# CropHarvested ViewSet
+class CropHarvestedViewSet(viewsets.ModelViewSet):
+    queryset = CropHarvested.objects.all()
+    serializer_class = CropHarvestedSerializer
 
 # task viewSet
 class TaskViewSet(viewsets.ModelViewSet):
