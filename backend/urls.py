@@ -29,7 +29,9 @@ router = DefaultRouter()
 router.register(r'crops', CropViewSet)
 router.register(r'tasks', TaskViewSet)
 router.register(r'finances', FinanceViewSet)
-router.register(r'produces', ProduceViewSet) 
+router.register(r'produces', ProduceViewSet)
+router.register(r'livestock-types', LivestockTypeViewSet)
+router.register(r'livestock', LivestockViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
