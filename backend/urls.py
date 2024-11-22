@@ -21,12 +21,15 @@ from rest_framework.routers import DefaultRouter
 from api.views import (
     CropViewSet, TaskViewSet,
     FinanceViewSet, ProduceViewSet,
-    LivestockTypeViewSet, LivestockViewSet
+    LivestockTypeViewSet, LivestockViewSet,
+    CropViewSet, CropInStorageViewSet, CropHarvestedViewSet
 )
 
 
 router = DefaultRouter()
 router.register(r'crops', CropViewSet)
+router.register(r'crops-in-storage', CropInStorageViewSet)
+router.register(r'crops-harvested', CropHarvestedViewSet)
 router.register(r'tasks', TaskViewSet)
 router.register(r'finances', FinanceViewSet)
 router.register(r'produces', ProduceViewSet)
