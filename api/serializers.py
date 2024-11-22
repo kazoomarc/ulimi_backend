@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Crop, Task, Finance, Produce, LivestockType
+from .models import Crop, Task, Finance, Produce, LivestockType, Livestock
 
 class CropSerializer(serializers.ModelSerializer):
     class Meta:
@@ -31,4 +31,10 @@ class ProduceSerializer(serializers.ModelSerializer):
 class LivestockTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = LivestockType
+        fields = '__all__'
+
+# livestock serializer
+class LivestockSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Livestock
         fields = '__all__'
