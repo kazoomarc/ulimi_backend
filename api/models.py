@@ -68,7 +68,7 @@ class Livestock(models.Model):
     def __str__(self):
         return f"{self.type} - Born: {self.date_of_birth}"
 
-from django.db import models
+
 
 # Crop Model
 class Crop(models.Model):
