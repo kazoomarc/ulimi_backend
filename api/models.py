@@ -3,15 +3,32 @@ from django.db import models
 # Create your models here.
 from django.db import models
 
+# Crop Model
 class Crop(models.Model):
     name = models.CharField(max_length=100)
-    description = models.TextField(blank=True)
-    planting_date = models.DateField(null=True, blank=True)
-    harvest_duration = models.IntegerField(help_text="Estimated days to harvest", null=True)
-    is_seasonal = models.BooleanField(default=False)
+    amount_planted = models.DecimalField(max_digits=10, decimal_places=2)
+    expected_yield_date = models.DateField()
+    date_planted = models.DateField()
 
     def __str__(self):
-        return self.name
+        return f"{self.name} - {self.amount_planted} planted on {self.date_planted}"
+
+# CropInStorage Model
+class CropInStorage(models.Model):
+    name = models.CharField(max_length=100)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return f"{self.name} - {self.amount} in storage"
+
+# CropHarvested Model
+class CropHarvested(models.Model):
+    name = models.CharField(max_length=100)
+    date = models.DateField()
+    amount_harvested = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return f"{self.name} - {self.amount_harvested} harvested on {self.date}"
 
 # task model
 class Task(models.Model):
@@ -70,29 +87,4 @@ class Livestock(models.Model):
 
 
 
-# Crop Model
-class Crop(models.Model):
-    name = models.CharField(max_length=100)
-    amount_planted = models.DecimalField(max_digits=10, decimal_places=2)
-    expected_yield_date = models.DateField()
-    date_planted = models.DateField()
 
-    def __str__(self):
-        return f"{self.name} - {self.amount_planted} planted on {self.date_planted}"
-
-# CropInStorage Model
-class CropInStorage(models.Model):
-    name = models.CharField(max_length=100)
-    amount = models.DecimalField(max_digits=10, decimal_places=2)
-
-    def __str__(self):
-        return f"{self.name} - {self.amount} in storage"
-
-# CropHarvested Model
-class CropHarvested(models.Model):
-    name = models.CharField(max_length=100)
-    date = models.DateField()
-    amount_harvested = models.DecimalField(max_digits=10, decimal_places=2)
-
-    def __str__(self):
-        return f"{self.name} - {self.amount_harvested} harvested on {self.date}"
