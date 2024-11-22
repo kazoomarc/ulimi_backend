@@ -35,3 +35,13 @@ class Finance(models.Model):
 
     def __str__(self):
         return f"{self.type} - ${self.amount} on {self.date}"
+
+
+# produce model
+class Produce(models.Model):
+    type = models.CharField(max_length=100)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    date_collected = models.DateField()
+
+    def __str__(self):
+        return f"{self.type} - {self.amount} on {self.date_collected}"
