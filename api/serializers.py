@@ -1,9 +1,26 @@
 from rest_framework import serializers
-from .models import Crop, Task, Finance, Produce, LivestockType, Livestock
+from .models import (
+    Crop, Task, Finance, Produce,
+    LivestockType, Livestock,
+    Crop, CropInStorage, CropHarvested
+)
 
+# Crop Serializer
 class CropSerializer(serializers.ModelSerializer):
     class Meta:
         model = Crop
+        fields = '__all__'
+
+# CropInStorage Serializer
+class CropInStorageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CropInStorage
+        fields = '__all__'
+
+# CropHarvested Serializer
+class CropHarvestedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CropHarvested
         fields = '__all__'
 
 # task serializer
