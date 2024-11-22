@@ -45,3 +45,10 @@ class Produce(models.Model):
 
     def __str__(self):
         return f"{self.type} - {self.amount} on {self.date_collected}"
+
+# livestockType model
+class LivestockType(models.Model):
+    name = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.name
