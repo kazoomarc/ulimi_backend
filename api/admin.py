@@ -2,6 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from django.contrib import admin
-from .models import Crop
+from .models import Crop, Task 
 
 admin.site.register(Crop)
+admin.site.register(Task) 
