@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.contrib import admin
 from .models import (
     Crop, Task,
-    Finance, Produce
+    Finance, Produce,
     LivestockType, Livestock)
 
 admin.site.register(Crop)
