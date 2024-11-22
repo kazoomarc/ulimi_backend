@@ -1,6 +1,6 @@
 from django.urls import path
 from rest_framework.routers import SimpleRouter
-from  .views import CropViewSet
+from  .views import CropViewSet, TaskViewSet 
 
 # added
-urlpatterns = router.urls
+# urlpatterns = router.urls
