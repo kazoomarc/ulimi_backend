@@ -52,3 +52,18 @@ class LivestockType(models.Model):
     
     def __str__(self):
         return self.name
+
+# livestock model
+class Livestock(models.Model):
+    VACCINATION_STATUS = [
+        ('vaccinated', 'Vaccinated'),
+        ('not_vaccinated', 'Not Vaccinated'),
+        ('due', 'Due for Vaccination'),
+    ]
+    
+    type = models.ForeignKey(LivestockType, on_delete=models.CASCADE, related_name='livestock')
+    date_of_birth = models.DateField()
+    vaccination_status = models.CharField(max_length=20, choices=VACCINATION_STATUS)
+
+    def __str__(self):
+        return f"{self.type} - Born: {self.date_of_birth}"
