@@ -31,7 +31,7 @@ class ProduceViewSet(viewsets.ModelViewSet):
 # livestockType viewset
 class LivestockTypeViewSet(viewsets.ModelViewSet):
     queryset = LivestockType.objects.all()
-    serializer_class = 
+    serializer_class = LivestockTypeSerializer
 
 # livestock viewset
 class LivestockViewSet(viewsets.ModelViewSet):
