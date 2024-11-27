@@ -22,7 +22,8 @@ from api.views import (
     CropViewSet, TaskViewSet,
     FinanceViewSet, ProduceViewSet,
     LivestockTypeViewSet, LivestockViewSet,
-    CropViewSet, CropInStorageViewSet, CropHarvestedViewSet
+    CropViewSet, CropInStorageViewSet, CropHarvestedViewSet,
+    MessageViewSet
 )
 
 
@@ -35,6 +36,7 @@ router.register(r'finances', FinanceViewSet)
 router.register(r'produces', ProduceViewSet)
 router.register(r'livestock-types', LivestockTypeViewSet)
 router.register(r'livestock', LivestockViewSet)
+router.register(r'messages', MessageViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),

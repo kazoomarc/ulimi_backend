@@ -5,14 +5,16 @@ from rest_framework import viewsets
 from .models import (
     Crop, Task, Finance, Produce,
     LivestockType, Livestock,
-    Crop, CropInStorage, CropHarvested
+    Crop, CropInStorage, CropHarvested,
+    Message
 )
 
 from .serializers import (
     CropSerializer, TaskSerializer,
     FinanceSerializer, ProduceSerializer,
     LivestockTypeSerializer, LivestockSerializer,
-    CropSerializer, CropInStorageSerializer, CropHarvestedSerializer
+    CropSerializer, CropInStorageSerializer, CropHarvestedSerializer,
+    MessageSerializer
 )
 
 # Crop ViewSet
@@ -54,3 +56,8 @@ class LivestockTypeViewSet(viewsets.ModelViewSet):
 class LivestockViewSet(viewsets.ModelViewSet):
     queryset = Livestock.objects.all()
     serializer_class = LivestockSerializer
+
+# message viewset
+class MessageViewSet(viewsets.ModelViewSet):
+    queryset = Message.objects.all()
+    serializer_class = MessageSerializer
