@@ -55,3 +55,13 @@ class LivestockSerializer(serializers.ModelSerializer):
     class Meta:
         model = Livestock
         fields = '__all__'
+
+
+# message serializer
+
+from .models import Message
+
+class MessageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Message
+        fields = '__all__'
