@@ -3,7 +3,7 @@
 *.pot
 *.pyc
 __pycache__/
-d_b.sqlite3
+_db.sqlite3
 media/
 
 # Virtual Environment
