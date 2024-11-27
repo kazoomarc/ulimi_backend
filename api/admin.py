@@ -6,7 +6,8 @@ from .models import (
     Crop, Task,
     Finance, Produce,
     LivestockType, Livestock,
-    Crop, CropInStorage, CropHarvested
+    Crop, CropInStorage, CropHarvested,
+    Message
 )
 
 admin.site.register(Crop)
@@ -15,3 +16,4 @@ admin.site.register(CropHarvested)
 admin.site.register(Task)
 admin.site.register(Finance)
 admin.site.register(Produce)
+admin.site.register(Message)
